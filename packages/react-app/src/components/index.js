@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Body = styled.div`
   align-items: center;
@@ -46,8 +46,8 @@ export const Image = styled.img`
 `;
 
 export const Link = styled.a.attrs({
-  target: "_blank",
-  rel: "noopener noreferrer",
+  target: '_blank',
+  rel: 'noopener noreferrer',
 })`
   color: #61dafb;
   margin-top: 8px;

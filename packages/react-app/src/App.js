@@ -1,11 +1,11 @@
-import { shortenAddress, useEthers, useLookupAddress } from "@usedapp/core";
-import React, { useEffect, useState } from "react";
+import { shortenAddress, useEthers, useLookupAddress } from '@usedapp/core';
+import React, { useEffect, useState } from 'react';
 
-import { Body, Container, Header } from "./components";
-import { WalletButton } from "./WalletButton";
+import { Body, Container, Header } from './components';
+import { WalletButton } from './WalletButton';
 
 function App() {
-  const [rendered, setRendered] = useState("");
+  const [rendered, setRendered] = useState('');
 
   const ens = useLookupAddress();
   const { account } = useEthers();
@@ -16,7 +16,7 @@ function App() {
     } else if (account) {
       setRendered(shortenAddress(account));
     } else {
-      setRendered("");
+      setRendered('');
     }
   }, [account, ens, setRendered]);
 
@@ -28,7 +28,8 @@ function App() {
         <WalletButton />
       </Header>
       <Body>
-        Hello{name && <strong style={{ marginLeft: 6 }}>{name}</strong>}, welcome to Noman Land.
+        Hello{name && <strong style={{ marginLeft: 6 }}>{name}</strong>},
+        welcome to Noman Land.
       </Body>
     </Container>
   );
