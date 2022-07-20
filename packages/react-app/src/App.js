@@ -2,6 +2,7 @@ import { shortenAddress, useEthers, useLookupAddress } from '@usedapp/core';
 import React, { useEffect, useState } from 'react';
 
 import { Body, Container, Header } from './components';
+import { useU2F } from './u2fHooks';
 import { WalletButton } from './WalletButton';
 
 function App() {
@@ -9,6 +10,8 @@ function App() {
 
   const ens = useLookupAddress();
   const { account } = useEthers();
+
+  useU2F();
 
   useEffect(() => {
     if (ens) {

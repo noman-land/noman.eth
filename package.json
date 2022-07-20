@@ -1,11 +1,9 @@
 {
-  "name": "@my-app/monorepo",
-  "version": "1.0.0",
+  "name": "noman-eth",
+  "version": "0.1.0",
   "keywords": [
     "ethereum",
-    "react",
-    "workspaces",
-    "yarn"
+    "react"
   ],
   "private": true,
   "scripts": {
@@ -23,5 +21,8 @@
     "packages": [
       "packages/*"
     ]
+  },
+  "devDependencies": {
+    "yarn": "^1.22.19"
   }
 }
