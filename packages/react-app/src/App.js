@@ -29,7 +29,7 @@ function App() {
       </Header>
       <Body>
         Hello{name && <strong style={{ marginLeft: 6 }}>{name}</strong>},
-        welcome to Noman Land.
+        welcome to Noman Land!
       </Body>
     </Container>
   );
