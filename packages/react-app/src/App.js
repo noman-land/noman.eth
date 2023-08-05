@@ -1,39 +1,34 @@
-import { shortenAddress, useEthers, useLookupAddress } from '@usedapp/core';
-import React, { useEffect, useState } from 'react';
+// import { shortenAddress, useEthers, useLookupAddress } from '@usedapp/core';
+// import React, { useEffect, useState } from 'react';
 
 import { Body, Container, Header } from './components';
 import { useU2F } from './u2fHooks';
-import { WalletButton } from './WalletButton';
+// import { WalletButton } from './WalletButton';
 
 function App() {
-  const [rendered, setRendered] = useState('');
+  // const [name, setName] = useState('');
 
-  const ens = useLookupAddress();
-  const { account } = useEthers();
+  // const ens = useLookupAddress();
+  // const { account } = useEthers();
 
   useU2F();
 
-  useEffect(() => {
-    if (ens) {
-      setRendered(ens);
-    } else if (account) {
-      setRendered(shortenAddress(account));
-    } else {
-      setRendered('');
-    }
-  }, [account, ens, setRendered]);
+  // useEffect(() => {
+  //   if (ens) {
+  //     setName(ens);
+  //   } else if (account) {
+  //     setName(shortenAddress(account));
+  //   } else {
+  //     setName('');
+  //   }
+  // }, [account, ens, setName]);
 
-  const name = rendered || account;
+  // const buttonText = name || account;
 
   return (
     <Container>
-      <Header>
-        <WalletButton />
-      </Header>
-      <Body>
-        Hello{name && <strong style={{ marginLeft: 6 }}>{name}</strong>},
-        welcome to Noman Land.
-      </Body>
+      <Header>{/* <WalletButton /> */}</Header>
+      <Body>Hello, welcome to Noman Land.</Body>
     </Container>
   );
 }

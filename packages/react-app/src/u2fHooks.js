@@ -1,31 +1,38 @@
 import { useEffect } from 'react';
 
-const isLocal = window.location.hostname === 'localhost';
+const isDeployed = window.location.hostname === 'noman.land';
 
-const BASE_URL = isLocal
-  ? 'http://127.0.0.1:8787'
-  : 'https://api.noman.land/u2f/v1';
+const domain = isDeployed
+  ? 'https://api.noman.land'
+  : `https://${window.location.hostname}:8787`;
+
+const TOKEN_URL = `${domain}/u2f/v1/token`;
+
+const get = url => fetch(url).then(response => response.json());
+
+const putToken = body =>
+  fetch(TOKEN_URL, {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  }).then(response => response.json());
+
+const registerKeyRemotely = registrationResponse =>
+  console.log('BEFORE PUT', registrationResponse) ||
+  putToken(registrationResponse)
+    .then(e => console.log('error after put', e))
+    .catch(e => console.error('catch after put', e));
+
+const registerKey = registrationRequest =>
+  console.log('after FETCH, registration request', registrationRequest) ||
+  navigator.credentials.create(
+    registrationRequest.appId,
+    [registrationRequest],
+    [],
+    registerKeyRemotely
+  );
 
 export const useU2F = () => {
   useEffect(() => {
-    fetch(`${BASE_URL}/token`)
-      .then(response => response.json())
-      .then(registrationRequest => {
-        console.log('BEFORE REGISTER', registrationRequest);
-        return window.u2f.register(
-          registrationRequest.appId,
-          [registrationRequest],
-          [],
-          registrationResponse => {
-            console.log('BEFORE PUT', registrationResponse);
-            fetch(`${BASE_URL}/token`, {
-              method: 'PUT',
-              body: registrationResponse,
-            })
-              // .then(response => response.json())
-              .then(console.log);
-          }
-        );
-      });
+    get(TOKEN_URL).then(registerKey);
   }, []);
 };
