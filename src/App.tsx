@@ -1,4 +1,4 @@
-import { Body, Container, Header } from "./components";
+import { Body, Container, Header } from './components';
 
 const App = () => {
   return (

@@ -1,9 +1,9 @@
 module.exports = {
   settings: {
     react: {
-      pragma: "React",
-      fragment: "Fragment",
-      version: "detect",
+      pragma: 'React',
+      fragment: 'Fragment',
+      version: 'detect',
     },
   },
   env: {
@@ -11,27 +11,27 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
   ],
   overrides: [
     {
       env: {
         node: true,
       },
-      files: [".eslintrc.{js,cjs}"],
+      files: ['.eslintrc.{js,cjs}'],
       parserOptions: {
-        sourceType: "script",
+        sourceType: 'script',
       },
     },
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["@typescript-eslint", "react"],
+  plugins: ['@typescript-eslint', 'react'],
   rules: {},
 };
