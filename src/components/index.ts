@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Body = styled.div`
   align-items: center;
@@ -13,7 +13,7 @@ export const Button = styled.button`
   background-color: white;
   border: none;
   border-radius: 8px;
-  color: #282c34;
+  color: #282c30;
   cursor: pointer;
   font-size: 16px;
   margin: 0px 20px;
@@ -23,7 +23,7 @@ export const Button = styled.button`
 `;
 
 export const Container = styled.div`
-  background-color: #282c34;
+  background-color: #282c30;
   display: flex;
   flex-direction: column;
   height: calc(100vh);
@@ -31,7 +31,7 @@ export const Container = styled.div`
 
 export const Header = styled.header`
   align-items: center;
-  background-color: #282c34;
+  background-color: #282c30;
   color: white;
   display: flex;
   flex-direction: row;
