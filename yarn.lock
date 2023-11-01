@@ -7719,7 +7719,6 @@ globby@^6.1.0:
 
 "gluegun@https://github.com/edgeandnode/gluegun#v4.3.1-pin-colors-dep":
   version "4.3.1"
-  uid b34b9003d7bf556836da41b57ef36eb21570620a
   resolved "https://github.com/edgeandnode/gluegun#b34b9003d7bf556836da41b57ef36eb21570620a"
   dependencies:
     apisauce "^1.0.1"
